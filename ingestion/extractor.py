@@ -1,14 +1,17 @@
 # ingestion/extractor.py
-# Rôle : lire les tables MySQL et les afficher avec pandas
-# Etape 1 : on commence simple, on complique après
+# Rôle : extraire toutes les tables MySQL vers des fichiers CSV
+# Ces CSV seront ensuite chargés dans Databricks
 
 import os
 import pandas as pd
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, inspect
 from dotenv import load_dotenv
+from datetime import datetime
 
-# Charger les variables du fichier .env
 load_dotenv()
+
+# Dossier où on va sauvegarder les CSV extraits
+OUTPUT_DIR = "data/raw"
 
 
 def get_engine():
@@ -20,28 +23,58 @@ def get_engine():
     return create_engine(url)
 
 
-def extract_table(table_name: str) -> pd.DataFrame:
-    """
-    Lit une table MySQL et retourne un DataFrame pandas.
+def get_all_tables(engine) -> list:
+    """Retourne la liste de toutes les tables de la base."""
+    inspector = inspect(engine)
+    return inspector.get_table_names()
 
-    Args:
-        table_name: nom de la table à extraire
 
-    Returns:
-        DataFrame avec toutes les lignes de la table
-    """
-    engine = get_engine()
-    print(f"📥 Extraction de la table : {table_name}")
-
+def extract_table(engine, table_name: str) -> pd.DataFrame:
+    """Lit une table MySQL et retourne un DataFrame pandas."""
+    print(f"  📥 Extraction : {table_name}")
     df = pd.read_sql(f"SELECT * FROM `{table_name}`", engine)
-
-    print(f"✅ {len(df)} lignes extraites")
-    print(f"📋 Colonnes : {list(df.columns)}")
-
+    print(f"  ✅ {len(df)} lignes | {len(df.columns)} colonnes")
     return df
 
 
-# Test rapide — sera supprimé plus tard
+def save_to_csv(df: pd.DataFrame, table_name: str):
+    """Sauvegarde un DataFrame en CSV dans data/raw/."""
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    path = os.path.join(OUTPUT_DIR, f"{table_name}.csv")
+    df.to_csv(path, index=False, encoding="utf-8")
+    print(f"  💾 Sauvegardé : {path}")
+
+
+def extract_all():
+    """Extrait toutes les tables et les sauvegarde en CSV."""
+    print("=" * 50)
+    print("🚀 Démarrage de l'extraction complète")
+    print(f"⏰ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print("=" * 50)
+
+    engine  = get_engine()
+    tables  = get_all_tables(engine)
+    success = []
+    failed  = []
+
+    print(f"\n📦 {len(tables)} tables trouvées dans la base\n")
+
+    for table in tables:
+        try:
+            df = extract_table(engine, table)
+            save_to_csv(df, table)
+            success.append(table)
+        except Exception as e:
+            print(f"  ❌ Erreur sur {table} : {e}")
+            failed.append(table)
+
+    print("\n" + "=" * 50)
+    print(f"✅ Succès  : {len(success)} tables")
+    print(f"❌ Échecs  : {len(failed)} tables")
+    if failed:
+        print(f"   {failed}")
+    print("=" * 50)
+
+
 if __name__ == "__main__":
-    df = extract_table("clients")
-    print(df.head())
+    extract_all()
