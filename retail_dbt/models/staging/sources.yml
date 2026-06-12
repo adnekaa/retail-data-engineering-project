@@ -1,0 +1,41 @@
+version: 2
+
+sources:
+  - name: pos_retail_source
+    database: POS_RETAIL
+    schema: SOURCE
+    tables:
+      - name: clients
+      - name: items
+      - name: itemcategories
+      - name: brands
+      - name: priceupdate
+      - name: productexpiry
+      - name: productbysupplier
+      - name: suppliers
+      - name: be
+      - name: bedetails
+      - name: br
+      - name: brdetails
+      - name: bl
+      - name: bldetails
+      - name: factures
+      - name: facturedetails
+      - name: receipts
+      - name: receiptdetails
+      - name: receiptswl
+      - name: receiptdetailswl
+      - name: stockmvt
+      - name: clientpayment
+      - name: supplierpayment
+      - name: supfactures
+      - name: supfacturedetails
+      - name: users
+      - name: sellerprofile
+      - name: selleractivity
+      - name: mvtcaisse
+      - name: typesmvtcaisse
+      - name: identity
+      - name: banks
+      - name: mychecks
+      - name: supplierpaymentattributes
