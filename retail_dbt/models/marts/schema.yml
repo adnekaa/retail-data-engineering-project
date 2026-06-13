@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: dim_client
+    columns:
+      - name: client_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_product
+    columns:
+      - name: item_barcode
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_supplier
+    columns:
+      - name: supplier_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_user
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null
