@@ -1,0 +1,4 @@
+id,factnum,datefact,idclient,client,total,clexonere,cltimbrage,reference,auteur,clientaddress,clientmatfiscal,userid,remiseglobale,factureavoirnum,avoirfacturenum,paymentstatus,paymentid,manualcode,timbre
+10,2,2024-04-03 00:00:00,4,Chaker Bjaoui,113.004,0,1,,taher,,,1,0.0,0,0,1,0,,0.0
+13,1,2024-07-10 00:00:00,5,Taha,162.016,0,1,,taher,,,1,0.0,0,0,0,0,,0.0
+14,2,2025-03-25 10:11:23,10,SAWTE,118.102,0,1,10,Mohamed Ali,,,1,0.0,0,0,0,0,CM-2,1.0

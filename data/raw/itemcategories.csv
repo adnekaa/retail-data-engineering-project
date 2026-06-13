@@ -1,0 +1,59 @@
+IDCategory,Category,CatStatus,CatShortcut
+1,Shampoing,1,0
+2,Après shampoing,0,0
+3,Gel douche,0,0
+4,Soin cheveux,0,0
+5,Produits Bébé,0,0
+6,Teinture capillaire,0,0
+7,Soins visage,0,0
+8,Epilation,1,0
+9,Soins corps,0,0
+10,Produits solaires,0,0
+11,Parfums,0,1
+12,Déodorants,0,0
+13,Sticks,0,0
+14,Bille,0,0
+15,Produits coiffants,0,0
+16,Soins des ongles,0,0
+17,Soins dentaires,0,0
+18,Coffrets,0,0
+19,Produits d'hygiène,1,1
+20,Produits de rasage,0,0
+21,Briquets,1,1
+22,Piles,0,0
+23,Torches,0,0
+24,Dentaire,0,0
+25,Albums photos,0,0
+26,Plastique,0,0
+27,Noël,0,0
+28,Parfum,0,0
+29,Luzi,0,0
+30,detergent,0,0
+31,det,0,0
+32,det,0,0
+33,sac cadeau,0,0
+34,papier,1,1
+35,savon,0,0
+36,papier alum,1,0
+37,COUCHE,0,0
+38,stark,0,0
+39,Brosse,0,0
+40,séchoir,1,1
+41,Maquillage,1,0
+42,MAQUILLAGE,0,0
+43,massage,0,0
+44,SOIN CHEVEUX,0,0
+45,Fraicheur air,0,0
+46,SAC POUBELLE,0,0
+47,lampes,1,0
+48,flame,0,0
+49,OXYDENT,0,0
+50,SHAMPOO,0,0
+51,dentifrices,1,0
+52,SAVON,1,1
+53,NETTOYAGE GENERALE,1,1
+54,ARTICLES CUISINE,1,1
+55,PILES,1,0
+56,DETERGANTS,1,1
+57,sac poubelle,1,1
+58,DEODORANT,1,1

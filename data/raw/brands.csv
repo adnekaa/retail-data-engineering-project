@@ -1,0 +1,193 @@
+BrandID,BrandName,BrandStatus
+1,Listerine,1
+2,Frank Provost,1
+3,Dessange,1
+4,Kodak,1
+5,Duracell,1
+6,Carthage,1
+7,Energizer,1
+8,Maxell,1
+9,GARNIER,1
+10,NARTA,1
+11,Vivelle Dop,1
+12,Tuniros,1
+13,cricket,1
+14,LPM,1
+15,Reneé Blanche,1
+16,COLGATE,1
+17,Judy,1
+18,det,1
+19,U.D,1
+20,CLASS,1
+21,NIVEA,1
+22,Elséve,1
+23,Casting,1
+24,l'oreal,1
+25,GARNIER,1
+26,GILLETTE,1
+27,JOHNSON,1
+28,BYLY,1
+29,LABELLO,1
+30,ROVENA,1
+31,ORAL-B,1
+32,MIXA,1
+33,LPM,1
+34,CREST,1
+35,ZINA,1
+36,DERME,1
+37,CLEAN AND CLEAR,1
+38,ELEGANCE,1
+39,LELLA,1
+40,BIEN ETRE,1
+41,elsada,1
+42,nexos,1
+43,lilas,1
+44,GILLTTE,1
+45,No Limit,1
+46,Dabur Amla,1
+47,Vatika,1
+48,Mood,1
+49,BIO STYLING,1
+50,EVERYGREEN,1
+51,Peaudouce,1
+52,Nana,1
+53,sensea,1
+54,Lotus,1
+55,tena,1
+56,Cotex,1
+57,SUNSILK,1
+58,SIGNAL,1
+59,close up,1
+60,Lux,1
+61,Dove,1
+62,Nadhif,1
+63,syoss,1
+64,bozino,1
+65,bellissima,1
+66,kappo,1
+67,Lavax,1
+68,Malizia,1
+69,Dr Beckmann,1
+70,Zynia,1
+71,Aseptika,1
+72,Bloom,1
+73,Dikson,1
+74,Q-line,1
+75,VELVET,1
+76,Epildeli,1
+77,Alterego,1
+78,Majirel,1
+79,Peggy Sage,1
+80,Asperox,1
+81,Perose,1
+82,3VE,1
+83,Maybelline,1
+84,Axe,1
+85,harpic,1
+86,vanich,1
+87,veet,1
+88,airwick,1
+89,finish,1
+90,detol,1
+91,Rexona,1
+92,Neutrogrna,1
+93,Tahiti,1
+94,Palmolive,1
+95,Arkemusa,1
+96,La roche Posay,1
+97,Varta,1
+98,Avène,1
+99,Jet 7,1
+100,Bio derma,1
+101,Folia,1
+102,Softy,1
+103,Miswak,1
+104,smac,1
+105,Clean,1
+106,k2r,1
+107,Molfix,1
+108,Choc,1
+109,Sani Brille,1
+110,Valia,1
+111,Brilex,1
+112,sensive,1
+113,Hilac,1
+114,RNS,1
+115,Uriage,1
+116,compact,1
+117,Dumax,1
+118,luxis,1
+119,elnett,1
+120,Lilas,1
+121,Atlass,1
+122,DEO,1
+123,Harpic,1
+124,Tresemmé,1
+125,razar,1
+126,SISAM,1
+127,Finesse,1
+128,Jmal,1
+129,white shark,1
+130,Aquajex,1
+131,jex,1
+132,softy clean,1
+133,nasim,1
+134,garden,1
+135,KOTIS,1
+136,Zitouna,1
+137,Mlouki,1
+138,XOMO,1
+139,ZED,1
+140,Dr cool,1
+141,DEX,1
+142,Dar clean,1
+143,vim,1
+144,DEXEL,1
+145,dabur herbel,1
+146,JOIA,1
+147,SOUPLINE,1
+148,SANEX,1
+149,Dima clean,1
+150,brasil cacau,-1
+151,Baranne,-1
+152,intesa,-1
+153,Dixan,-1
+154,Pril,-1
+155,Awane,-1
+156,CONFORT,-1
+157,Comfort,-1
+158,Nicols,-1
+159,Paul,-1
+160,General power,-1
+161,souplesse,-1
+162,Muster,-1
+163,Lory,-1
+164,Dpiltime,-1
+165,Depiltime,-1
+166,Gentelmen,-1
+167,yak,-1
+168,felce azzurra,-1
+169,wc net,-1
+170,OURAGAN,-1
+171,La fourmi,-1
+172,Sponge jex,-1
+173,Doxa,-1
+174,awane,-1
+175,Cotona,-1
+176,unik,-1
+177,shisha-coal,-1
+178,H.Zone lalo,-1
+179,KIDDO,-1
+180,Semi dilino,-1
+181,solyss,-1
+182,Schwarzkopf,-1
+183,Rosy,-1
+184,MBwaay,-1
+185,fleur de primtemps,-1
+186,SOFPINCE,-1
+187,EVISSA,-1
+188,ZONY,-1
+189,BSP,-1
+190,VESTEL,-1
+191,SILLGECH,-1
+192,camay,-1

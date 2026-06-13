@@ -1,0 +1,61 @@
+id,brnum,datebr,idsupplier,supplier,total,reference,supplieraddress,suppliermatfiscal,auteur,userid
+1,0,2023-12-22,1,SDC,5207.947,,,,taher,1
+2,0,2024-01-06,1,SDC,372.289,Ecart + Systém,,,taher,1
+3,0,2024-01-06,1,SDC,1415.833,retour sdc élsève,,,taher,1
+4,0,2024-01-06,1,SDC,788.013,Retour SDC Ultra Doux ,,,taher,1
+5,0,2024-01-06,1,SDC,1870.569,Retour SDC,,,taher,1
+6,0,2024-01-09,1,SDC,652.654,KODAK ,,,taher,1
+7,0,2024-01-10,1,SDC,0.0,parfum animation,,,taher,1
+8,0,2024-01-10,1,SDC,736.624,L.P.M,,,taher,1
+9,0,2024-01-25,1,SDC,102.705,javel,,,taher,1
+10,0,2024-02-17,1,SDC,393.132,,,,taher,1
+11,0,2024-02-17,1,SDC,484.556,,,,taher,1
+12,0,2024-02-26,1,SDC,660.788,CADRE PHOTOS + PARAPLUI,,,taher,1
+13,0,2024-03-05,4,lilas,467.094,Couche bébé Unisexe,,,taher,1
+14,0,2024-03-18,8,ESSOURI DISTRIBUTION,36.481,changement par savon liquide rouge 1 L,,,taher,1
+15,0,2024-03-25,4,lilas,152.499,,,,taher,1
+16,0,2024-05-25,1,SDC,17.856,Promotion LPM,,,taher,1
+17,0,2024-05-25,1,SDC,18.885,hilal ahmer ,,,taher,1
+18,0,2024-05-29,1,SDC,30.107,,,,taher,1
+19,0,2024-05-31,1,SDC,127.381,retour ,,,taher,1
+20,0,2024-06-08,1,SDC,40.74,Foire  Lvax ,,,taher,1
+21,0,2024-06-09,1,SDC,379.07,Foire ,,,taher,1
+22,0,2024-06-11,1,SDC,54.914,retour sdc,,,taher,1
+23,0,2024-07-01,8,ESSOURI DISTRIBUTION,12.973,,,,taher,1
+24,0,2024-07-05,1,SDC,245.918,jet 7 1 kg ,,,taher,1
+25,0,2024-07-10,1,SDC,60.589,,,,taher,1
+26,0,2024-07-11,1,SDC,964.364,lella ,,,taher,1
+27,0,2024-07-15,8,ESSOURI DISTRIBUTION,44.454,,,,taher,1
+28,0,2024-07-15,1,SDC,834.487,,,,taher,1
+29,0,2024-08-10,1,SDC,439.838,bloom,,,taher,1
+30,0,2024-08-13,1,SDC,179.119,Pille,,,taher,1
+31,0,2024-08-16,1,SDC,530.451,Stark + Kappo,,,taher,1
+32,0,2024-08-20,1,SDC,959.899,Gommage,,,taher,1
+33,0,2024-08-20,1,SDC,777.658,mood teinture,,,taher,1
+34,0,2024-08-20,1,SDC,167.166,R.B kit coloration ,,,taher,1
+35,0,2024-08-20,1,SDC,267.65,Casting,,,taher,1
+36,0,2024-08-20,1,SDC,769.603,R.B Teinture + oxydant,,,taher,1
+37,0,2024-08-20,1,SDC,490.179,creme sans rincage,,,taher,1
+38,0,2024-08-20,1,SDC,366.568,gommage Nivea,,,taher,1
+39,0,2024-08-20,1,SDC,545.634,pure line,,,taher,1
+40,0,2024-08-21,1,SDC,544.612,ULTRADOUX,,,taher,1
+41,0,2024-08-23,1,SDC,1276.693,sunsilk,,,taher,1
+42,0,2024-08-28,8,ESSOURI DISTRIBUTION,32.908,,,,taher,1
+43,0,2024-08-29,18,det,7.178,DET,,,taher,1
+44,0,2024-08-30,1,SDC,121.945,nivea deo,,,taher,1
+45,0,2024-09-02,1,SDC,262.764,SDC-R.B,,,taher,1
+46,0,2024-09-02,1,SDC,599.635,SDC-pilles,,,taher,1
+47,0,2024-09-02,1,SDC,604.087,sdc-albums ,,,taher,1
+48,0,2024-09-02,1,SDC,368.466,SDC-déodorants Narta,,,taher,1
+49,0,2024-09-02,1,SDC,585.611,SDC-Every green ,,,taher,1
+50,0,2024-09-02,1,SDC,165.162,SDC-Soin visage,,,taher,1
+51,0,2024-09-05,1,SDC,36.146,Retour sdc divers,,,taher,1
+52,0,2024-09-05,8,ESSOURI DISTRIBUTION,49.374,Souri-couches,,,taher,1
+53,0,2024-09-06,18,det,302.143,OMo Dexel ,,,taher,1
+54,0,2024-09-10,8,ESSOURI DISTRIBUTION,32.592,,,,taher,1
+55,0,2024-09-10,1,SDC,743.984,,,,taher,1
+56,0,2024-09-13,11,peaudeauce,6.0,,,,taher,1
+57,0,2024-09-18,4,lilas,20.144,,,,taher,1
+59,0,2024-09-20,21,correction stock,256.793,,,,taher,1
+60,0,2024-09-23,24,correction stock axe,351.894,,,,taher,1
+61,0,2024-10-03,8,ESSOURI DISTRIBUTION,182.709,,,,taher,1
