@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: fact_sales
+    columns:
+      - name: detail_id
+        tests:
+          - unique
+          - not_null
+      - name: invoice_id
+        tests:
+          - relationships:
+              to: ref('stg_factures')
+              field: invoice_id
+
+  - name: fact_pos_sales
+    columns:
+      - name: receipt_id
+        tests:
+          - not_null
+      - name: item_barcode
+        tests:
+          - relationships:
+              to: ref('dim_product')
+              field: item_barcode
+              config:
+                severity: warn
+
+  - name: fact_stock_movements
+    columns:
+      - name: movement_id
+        tests:
+          - unique
+          - not_null
+      - name: item_id
+        tests:
+          - relationships:
+              to: ref('dim_product')
+              field: item_barcode
+              config:
+                severity: warn
+
+  - name: fact_purchases
+    columns:
+      - name: detail_id
+        tests:
+          - unique
+          - not_null
+      - name: supplier_id
+        tests:
+          - relationships:
+              to: ref('dim_supplier')
+              field: supplier_id
