@@ -2,29 +2,98 @@ version: 2
 
 models:
   - name: dim_client
+    description: >
+      Dimension clients — contient les informations descriptives de chaque client
+      du commerce de détail (nom, contact, adresse). Clé du star schema pour
+      analyser les ventes et paiements par client.
     columns:
       - name: client_id
+        description: Identifiant unique du client (clé primaire).
         tests:
           - unique
           - not_null
+
+      - name: client_name
+        description: Nom complet du client.
+
+      - name: phone
+        description: Numéro de téléphone du client.
+
+      - name: address
+        description: Adresse postale du client.
 
   - name: dim_product
+    description: >
+      Dimension produits — regroupe les informations sur chaque article vendu,
+      enrichies avec la catégorie (itemcategories) et la marque (brands).
+      Construite par jointure entre stg_items, stg_itemcategories et stg_brands.
     columns:
       - name: item_barcode
+        description: Code-barres de l'article — clé primaire de la dimension produit.
         tests:
           - unique
           - not_null
+
+      - name: item_name
+        description: Nom commercial de l'article.
+
+      - name: category_name
+        description: Catégorie à laquelle appartient l'article.
+
+      - name: brand_name
+        description: Marque de l'article.
 
   - name: dim_supplier
+    description: >
+      Dimension fournisseurs — informations descriptives sur chaque fournisseur
+      (nom, contact). Utilisée pour analyser les achats et paiements fournisseurs.
     columns:
       - name: supplier_id
+        description: Identifiant unique du fournisseur (clé primaire).
         tests:
           - unique
           - not_null
 
+      - name: supplier_name
+        description: Raison sociale du fournisseur.
+
+      - name: phone
+        description: Numéro de téléphone du fournisseur.
+
   - name: dim_user
+    description: >
+      Dimension utilisateurs — représente les employés ou caissiers du système
+      POS. Permet d'analyser les ventes et opérations par utilisateur.
     columns:
       - name: user_id
+        description: Identifiant unique de l'utilisateur (clé primaire).
         tests:
           - unique
           - not_null
+
+      - name: username
+        description: Nom d'utilisateur (login) dans le système.
+
+      - name: full_name
+        description: Nom complet de l'employé.
+
+  - name: dim_date
+    description: >
+      Dimension date — table calendrier générée via dbt_utils.date_spine.
+      Couvre la plage de dates nécessaire pour l'analyse temporelle des facts.
+      Ne dépend d'aucune source brute — entièrement calculée.
+    columns:
+      - name: date_day
+        description: Date au format YYYY-MM-DD — clé primaire de la dimension date.
+
+      - name: day_of_week
+        description: Jour de la semaine (1=Lundi, 7=Dimanche).
+
+      - name: month
+        description: Mois de l'année (1-12).
+
+      - name: year
+        description: Année (ex. 2024).
+
+      - name: quarter
+        description: Trimestre (1-4).

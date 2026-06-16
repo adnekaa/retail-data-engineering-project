@@ -2,23 +2,77 @@ version: 2
 
 models:
   - name: fact_sales
+    description: >
+      Table de faits des ventes B2B (factures client) — chaque ligne représente
+      un article vendu dans une facture. Construite par jointure entre
+      stg_facturedetails et stg_factures. Grain : une ligne par détail de facture.
     columns:
       - name: detail_id
+        description: Identifiant unique du détail de facture (clé primaire du fait).
         tests:
           - unique
           - not_null
+
       - name: invoice_id
+        description: Référence vers la facture parente (FK vers stg_factures).
         tests:
           - relationships:
               to: ref('stg_factures')
               field: invoice_id
 
+      - name: invoice_date
+        description: Date de la facture (FK vers dim_date).
+
+      - name: client_id
+        description: Identifiant du client (FK vers dim_client).
+
+      - name: item_id
+        description: Identifiant de l'article vendu (FK vers dim_product).
+
+      - name: quantity
+        description: Quantité vendue pour cet article dans la facture.
+
+      - name: sell_price_incl_vat
+        description: Prix unitaire de vente TTC.
+
+      - name: sell_price_excl_vat
+        description: Prix unitaire de vente HT.
+
+      - name: discount_pct
+        description: Pourcentage de remise appliqué sur la ligne.
+
+      - name: line_total
+        description: Montant total de la ligne HT après remise.
+
+      - name: line_vat_total
+        description: Montant TVA de la ligne.
+
   - name: fact_pos_sales
+    description: >
+      Table de faits des ventes POS/comptoir (tickets de caisse) — chaque ligne
+      représente un article vendu au comptoir. Construite par jointure entre
+      stg_receiptdetails et stg_receipts. Grain : une ligne par détail de ticket.
+      Différence clé avec fact_sales : ventes B2C immédiates vs ventes B2B facturées.
     columns:
       - name: receipt_id
+        description: Identifiant du ticket de caisse (FK vers stg_receipts).
         tests:
           - not_null
+
+      - name: receipt_date
+        description: Date du ticket de caisse (FK vers dim_date).
+
+      - name: client_id
+        description: Identifiant du client (FK vers dim_client).
+
+      - name: user_id
+        description: Identifiant du caissier ayant effectué la vente (FK vers dim_user).
+
       - name: item_barcode
+        description: >
+          Code-barres du produit vendu (FK vers dim_product).
+          ~0.6% des lignes référencent des produits historiques absents
+          du catalogue actuel — severity warn documentée et acceptée.
         tests:
           - relationships:
               to: ref('dim_product')
@@ -26,13 +80,43 @@ models:
               config:
                 severity: warn
 
+      - name: item_count
+        description: Quantité vendue sur ce ticket.
+
+      - name: item_buy_price
+        description: Prix d'achat unitaire au moment de la vente (pour calcul de marge).
+
+      - name: item_sell_price
+        description: Prix de vente unitaire TTC.
+
+      - name: margin
+        description: Marge brute calculée — (item_sell_price - item_buy_price) × item_count.
+
+      - name: total_incl_vat
+        description: Total du ticket TTC.
+
+      - name: total_excl_vat
+        description: Total du ticket HT.
+
+      - name: vat_amount
+        description: Montant TVA total du ticket.
+
   - name: fact_stock_movements
+    description: >
+      Table de faits des mouvements de stock — chaque ligne représente
+      une entrée ou sortie de stock pour un article. Source : stg_stockmvt.
+      Grain : une ligne par mouvement. Contient ~75 000 lignes.
     columns:
       - name: movement_id
+        description: Identifiant unique du mouvement de stock (clé primaire).
         tests:
           - unique
           - not_null
+
       - name: item_id
+        description: >
+          Identifiant de l'article concerné (FK vers dim_product via item_barcode).
+          Quelques produits historiques absents du catalogue — severity warn acceptée.
         tests:
           - relationships:
               to: ref('dim_product')
@@ -41,13 +125,62 @@ models:
                 severity: warn
 
   - name: fact_purchases
+    description: >
+      Table de faits des achats fournisseurs — chaque ligne représente
+      un article réceptionné dans un bon d'entrée (BE). Construite par jointure
+      entre stg_bedetails et stg_be. Grain : une ligne par détail de bon d'entrée.
     columns:
       - name: detail_id
+        description: Identifiant unique du détail d'achat (clé primaire du fait).
         tests:
           - unique
           - not_null
+
       - name: supplier_id
+        description: Identifiant du fournisseur (FK vers dim_supplier).
         tests:
           - relationships:
               to: ref('dim_supplier')
               field: supplier_id
+
+  - name: fact_client_payments
+    description: >
+      Table de faits des paiements clients — chaque ligne représente
+      un règlement effectué par un client. Source : stg_clientpayment.
+      Grain : une ligne par paiement.
+    columns:
+      - name: payment_id
+        description: Identifiant unique du paiement client (clé primaire).
+
+      - name: client_id
+        description: Identifiant du client ayant effectué le paiement (FK vers dim_client).
+
+      - name: amount
+        description: Montant du paiement.
+
+      - name: payment_date
+        description: Date du paiement (FK vers dim_date).
+
+      - name: payment_method
+        description: Mode de paiement (espèces, chèque, virement, etc.).
+
+  - name: fact_supplier_payments
+    description: >
+      Table de faits des paiements fournisseurs — chaque ligne représente
+      un règlement effectué à un fournisseur. Source : stg_supplierpayment.
+      Grain : une ligne par paiement.
+    columns:
+      - name: payment_id
+        description: Identifiant unique du paiement fournisseur (clé primaire).
+
+      - name: supplier_id
+        description: Identifiant du fournisseur payé (FK vers dim_supplier).
+
+      - name: amount
+        description: Montant du paiement.
+
+      - name: payment_date
+        description: Date du paiement (FK vers dim_date).
+
+      - name: payment_method
+        description: Mode de paiement utilisé.
