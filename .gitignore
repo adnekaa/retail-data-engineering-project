@@ -1,0 +1,9 @@
+.venv/
+.env
+data/raw/
+__pycache__/
+*.pyc
+uv.lock
+logs/
+target/
+dbt_packages/
